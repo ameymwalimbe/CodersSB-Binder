@@ -1,12 +1,8 @@
 .dd-wrapper {
-    padding-left: 150px;
+    padding-left: 750px;
     display: flex-end;
     min-height: 38 px;
-    flex-wrap: wrap;
-    
-
-    border-left: 300px solid rgb(9, 83, 167);
-    border-right: 300px solid rgb(9, 83, 167);
-    border-collapse: 8px solid black;
-
+    /*flex-wrap:;   */
+    background-color:salmon;
+    border-radius: 20px;
 }

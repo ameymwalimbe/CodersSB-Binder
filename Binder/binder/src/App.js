@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
 import Header from './Header';
-import Dropdown from './Dropdown'
-
+import Dropdown from './Dropdown';
+import TinderCards from './TinderCards'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+ 
 const items = [
   {
     id: 1,
@@ -26,16 +28,27 @@ const items = [
 function App() {
   return (
     <div className="App">
-      
       {/* Header */}
-      <Header />
-      <Dropdown title="Select A Class" items ={items}/>
-      {/* DropDown */}
-      {/* Profile Cards */}
-      {/* Buttons below Binder Profile */}
-
-      {/* Chat screen */}
-      {/* Individual chat screen */}
+  
+      <Router>
+        <Header />
+        <Switch>
+          <Route path = "/chat">
+            <h1>I am chat page</h1>
+          </Route>
+          <Route path = "/cards">
+            <TinderCards />
+          </Route>
+          <Route path ="/profile">
+            <h2>Profile page</h2>
+          </Route>
+          <Route path = "/">
+            {/* DropDown */}
+            <Dropdown title="Select A Class" items ={items}/>
+            {/*TinderCards on Selection*/}
+          </Route>
+        </Switch>
+      </Router>
     </div>
 
     

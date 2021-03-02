@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
 import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
 import onClickOutside from "react-onclickoutside";
+import { Link } from 'react-router-dom';
 
 function DropDown({ title, items =[], multiSelect = false}){
     const [open, setOpen] = useState(false);
@@ -43,12 +44,15 @@ function DropDown({ title, items =[], multiSelect = false}){
                 <ul className ="dd-list">
                     {items.map(item => (
                         <li className="dd-list-item" key={item.id}>
+                            <Link to="/cards">
                             <button type="button" onClick={() => handleOnClick(item)}>
                                 <span>{item.value}</span>
                                 <span> {isIteminSelection(item) && '    Selected'}</span>
 
-                    
                             </button>
+
+                            </Link>
+        
                         </li>
                     ))}
                 </ul>
