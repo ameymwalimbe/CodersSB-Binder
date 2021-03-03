@@ -3,6 +3,7 @@ import './App.css';
 import Header from './Header';
 import Dropdown from './Dropdown';
 import TinderCards from './TinderCards'
+import Profile from './profile';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
  
 const items = [
@@ -28,30 +29,37 @@ const items = [
 function App() {
   return (
     <div className="App">
-      {/* Header */}
-  
+      
       <Router>
         <Header />
         <Switch>
           <Route path = "/chat">
+            <div className = "chatround">
             <h1>I am chat page</h1>
+            </div>
           </Route>
+        
           <Route path = "/cards">
+            <div className = "cards">
             <TinderCards />
+            </div>
           </Route>
+          
           <Route path ="/profile">
-            <h2>Profile page</h2>
+            <div className = "prof_card">
+              <h2>BUILD YOUR PROFILE</h2>
+              <Profile />
+            </div>
           </Route>
           <Route path = "/">
-            {/* DropDown */}
-            <Dropdown title="Select A Class" items ={items}/>
-            {/*TinderCards on Selection*/}
+            <div className = "dropdown">
+              <Dropdown title="Select A Class" items ={items}/>
+            </div>
           </Route>
         </Switch>
       </Router>
     </div>
-
-    
+ 
   );
 }
 

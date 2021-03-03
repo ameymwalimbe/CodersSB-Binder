@@ -14,6 +14,7 @@ useEffect(() => {
         setPeople(snapshot.docs.map(doc => doc.data()))
     ))
 }, [people]);
+
     return(
         <div>
             <div classname ="tinderCards__cardContainer">
