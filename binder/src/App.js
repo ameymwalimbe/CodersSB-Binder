@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      
       <Router>
         <Header />
         <Switch>
@@ -24,7 +23,6 @@ function App() {
             <h1>I am chat page</h1>
             </div>
           </Route>
-        
           <Route path = "/cards">
             <div className = "cards">
             <TinderCards />
