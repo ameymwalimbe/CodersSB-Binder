@@ -1,69 +1,84 @@
-import React, {useState} from 'react';
-import ArrowDropUpIcon from '@material-ui/icons/ArrowDropUp';
-import ArrowDropDownIcon from '@material-ui/icons/ArrowDropDown';
-import onClickOutside from "react-onclickoutside";
+import React from 'react';
+import Select from 'react-select';
 import { Link } from 'react-router-dom';
 
-function DropDown({ title, items =[], multiSelect = false}){
-    const [open, setOpen] = useState(false);
-    const [selection, setSelection] = useState([]);
-    const toggle = () => setOpen(!open);
-    DropDown.handleClickOutside = () => setOpen(false);
+const items = [
+    {
+      label: 'CS 8',
+      value:'CS 8',
+    }, 
+  {
+      label: 'CS 16',
+      value:'CS 16',
+  },
+  {
+      label: 'CS 32',
+      value:'CS 32',
+  },
+  {
+      label: 'CS 40',
+      value:'CS 40',
+  },
+  {
+    label: 'Math 4A',
+    value:'Math 4A',
+},
 
-    function handleOnClick(item) {
-        if (!selection.some(current => current.id === item.id)){
-            if (!multiSelect) {
-                setSelection([item]);
-            }
-        }
-    }
+{
+    label: 'Math 4B',
+    value:'Math 4B',
+},
 
-    function isIteminSelection(item) {
-        if (selection.some(current  => current.id === item.id)) {
-            return true;
-        }
-        return false;
-    }
+{
+    label: 'Math 6A',
+    value:'Math 6A',
+},
 
-    return(
-        <div className = "dd-wrapper">
-            <div 
-                tabIndex ={0} 
-                className ="dd-header" 
-                role="button" 
-                onKeyPress={() => toggle(!open)} 
-                onClick ={() => toggle(!open)} >
-                    <div className ="dd-header__title">
-                        <p className ="dd-header__title--bold">{title}</p>
-                    </div>
-                `<div className="dd-header__action">
-                    <p>{open ? <ArrowDropUpIcon/> : <ArrowDropDownIcon/>}</p>
-                </div>
+{
+    label: 'Math 6B',
+    value:'Math 6B',
+},
+
+{
+    label: 'Phys 1',
+    value:'Phys 1',
+},
+
+{
+    label: 'Phys 2',
+    value:'Phys 2',
+},
+{
+    label: 'Phys 3',
+    value:'Phys 3',
+},
+{
+    label: 'Phys 4',
+    value:'Phys 4',
+},
+{
+    label: 'Phys 5',
+    value:'Phys 5',
+},  
+  ];
+
+function Dropdown() {
+  return (
+    <div>
+        <div className="dd-wrapper">
+        <Select
+        options={items}
+      />
+        <div className = "title">
+            <Link to="/cards">
+            <button>
+                <h1>Submit</h1>
+                </button>
+            </Link>
             </div>
-            {open && (
-                <ul className ="dd-list">
-                    {items.map(item => (
-                        <li className="dd-list-item" key={item.id}>
-                            <Link to="/cards">
-                            <button type="button" onClick={() => handleOnClick(item)}>
-                                <span>{item.value}</span>
-                                <span> {isIteminSelection(item) && '    Selected'}</span>
-
-                            </button>
-
-                            </Link>
-        
-                        </li>
-                    ))}
-                </ul>
-            )}
-
         </div>
-    )
+    </div>
+  );
 }
 
-const onClickOutsideConfig = {
-    handleClickOutside: () => DropDown.handleClickOutside,
-};
-export default onClickOutside(DropDown, onClickOutsideConfig);
-
+export default Dropdown;

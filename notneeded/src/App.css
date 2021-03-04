@@ -11,7 +11,7 @@
     box-shadow: 0px 18px 53px 0px rgba(0,0,0,.3);  
  }
 
-.dd-wrapper:hover {
+ .dd-wrapper:hover {
     border: solid #337FED 1px;
     background: #1E62D0;
     background-image: -webkit-linear-gradient(top, #1E62D0, #4624EB);
@@ -96,3 +96,4 @@
     font-size: xx-large;
     color:rgb(252, 238, 252);
 }
+

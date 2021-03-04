@@ -16,7 +16,7 @@ function Header() {
             </IconButton>
             </Link>
 
-           <Link to ="/home">
+           <Link to ="/">
            <ImportContactsIcon fontSize="large"/>
            </Link>
            
