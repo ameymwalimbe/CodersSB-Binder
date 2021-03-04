@@ -4,6 +4,7 @@ import Header from './Header';
 import Dropdown from './Dropdown';
 import TinderCards from './TinderCards'
 import Profile from './profile';
+import Login from './Login'; 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
  
@@ -30,17 +31,17 @@ const items = [
 function App() {
   return (
     <div className="App">
-      
       <Router>
         <Header />
         <Switch>
-
+          <Route exact path = "/">
+            <Login />
+          </Route>
           <Route path = "/chat">
             <div className = "chatround">
             <h1>I am chat page</h1>
             </div>
           </Route>
-        
           <Route path = "/cards">
             <div className = "cards">
             <TinderCards />
@@ -54,7 +55,7 @@ function App() {
             </div>
           </Route>
 
-          <Route path = "/">
+          <Route path = "/home">
             <div className = "dropdown">
             <div className = "dropdown_text">
               <h2>Welcome to Binder</h2>
