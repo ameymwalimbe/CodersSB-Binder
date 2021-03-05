@@ -5,6 +5,7 @@ import Dropdown from './Dropdown';
 import TinderCards from './TinderCards'
 import Profile from './profile';
 import Login from './Login'; 
+import SwipeButtons from './SwipeButtons'; 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path = "/cards">
             <div className = "cards">
             <TinderCards />
+            <SwipeButtons />
             </div>
           </Route>
           
